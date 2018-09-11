@@ -39,7 +39,7 @@ function Hero(image, top, left, size, bottom, right) {
     }
 }
 
-var hero = new Hero('doraemon.jpg', 200, 30, 200, 90, 90);
+var hero = new Hero('doraemon.jpg', 20, 10, 200, 90, 90);
 
 function start() {
     if (hero.left < window.innerWidth - hero.size) {
