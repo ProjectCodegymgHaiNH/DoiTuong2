@@ -35,9 +35,11 @@
 
         this.eat = function () {
             if(this.checkApple() == false){
+                document.write( " đã cắn hết táo <br>")
                 console.log( " đã cắn hết táo")
             }else{
                 this.apple.decrease()
+                document.write(" đã cắn 1 miếng táo còn " + this.getApple() + " miếng <br>")
                 console.log( " đã cắn 1 miếng táo còn " + this.getApple() + " miếng")
             }
         }
@@ -75,15 +77,16 @@
         }
     }
 
-    let apple = new Apple(5)
+    let apple = new Apple(10)
     let human = new Human()
     human.setName("Adam")
     human.setWeight("90kg")
     human.setGender(true)
     document.write("Tên: "+human.name+" - Giới tính: "+human.gender+" - Cân nặng: "+human.weight+"<br>")
     human.setApple(apple)
-    
-    human.eat()
+    for (let i=0; i<15;i++){
+        human.eat()
+    }
 
 </script>
 </body>

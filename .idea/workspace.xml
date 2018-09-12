@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67d8700a-0beb-465c-b068-1365488efa4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bai_tap_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_tap_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap_5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thuc_hanh_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/thuc_hanh_1.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,13 +41,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="5259" />
+          <entry key="html" value="5302" />
           <entry key="js" value="528" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="5259" />
+          <entry key="HTML" value="5302" />
           <entry key="JavaScript" value="528" />
         </counts>
       </usages-collector>
@@ -81,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bai_tap_2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="84" column="4" lean-forward="true" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+            <state relative-caret-position="322">
+              <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -200,12 +196,12 @@
       <workItem from="1536648750382" duration="13073000" />
       <workItem from="1536728537364" duration="2009000" />
       <workItem from="1536734284927" duration="497000" />
-      <workItem from="1536737600606" duration="9561000" />
+      <workItem from="1536737600606" duration="9799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30768000" />
+    <option name="totallyTimeSpent" value="31006000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -309,8 +305,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bai_tap_2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="84" column="4" lean-forward="true" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+        <state relative-caret-position="322">
+          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
         </state>
       </provider>
     </entry>
