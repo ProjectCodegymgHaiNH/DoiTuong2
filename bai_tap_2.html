@@ -8,22 +8,18 @@
 <script>
     let Apples = function(weight){
         this.weight = weight
+        this.getWeight = function () {
+            return this.weight
+        }
         this.decrease = function () {
             if (this.weight > 0){
                 this.weight --
                 return this.weight
             }
-            return this.weight
         }
-
         this.isEmpty = function () {
              this.empty = false
         }
-
-        this.getWeight = function () {
-            return this.weight
-        }
-
     }
 
     let Human = function () {
@@ -54,15 +50,19 @@
         this.eat= function (apple) {
             this.apple.decrease()
         }
-        
+
         this.stay = function (string) {
             this.string = string
+        }
+        this.getStay = function () {
+            return this.string
         }
 
         this.checkApple = function (apple) {
             if (this.weight <= 0){
                 this.apple.isEmpty()
             }
+        }
     }
 
     let apple = new Apples(10)
@@ -73,9 +73,10 @@
     document.write("Tên cậu ấy là <b>"+Nguoi.getName()+"</b><br>")
     document.write("<b>"+Nguoi.getName()+"</b> nặng <b>"+ Nguoi.getWeight()+"</b> kg<br>")
     document.write("<b>"+Nguoi.getName()+"</b> giới tính <b>"+ Nguoi.getGender()+"</b><br>")
-    Nguoi.stay("Hello tên tôi là adam")
-    Nguoi.eat(apple)
-    Nguoi.checkApple(apple)
+    Nguoi.stay("Hello tên tôi la Adam")
+    console.log(Nguoi.getStay())
+    let anTao = apple.getWeight()
+    Nguoi.eat(anTao)
 </script>
 </body>
 </html>

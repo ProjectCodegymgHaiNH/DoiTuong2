@@ -29,12 +29,12 @@ function Hero(image, top, left, size, bottom, right) {
     }
 
     this.moveLeft = function () {
-        this.right += 50;
+        this.left -= 50;
         console.log("right: " + this.right)
     }
 
     this.moveTop = function () {
-        this.bottom += 50;
+        this.top -= 50;
         console.log("top: " + this.bottom)
     }
 }
@@ -42,15 +42,15 @@ function Hero(image, top, left, size, bottom, right) {
 var hero = new Hero('doraemon.jpg', 20, 10, 200, 90, 90);
 
 function start() {
+
     if (hero.left < window.innerWidth - hero.size) {
         hero.moveRight();
-    }
-    if (hero.left >= window.innerWidth - hero.size && hero.top < window.innerHeight - hero.size) {
+    }else if (hero.left >= window.innerWidth - hero.size && hero.top < window.innerHeight - hero.size) {
         hero.moveBottom()
     }
-    if (hero.top >= window.innerHeight - hero.size && hero.left >= window.innerWidth - hero.size) {
-        //hero.moveLeft()
-    }
+    // else if (hero.top >= window.innerHeight - hero.size && hero.left >= window.innerWidth - hero.size) {
+    //      hero.moveLeft()
+    // }
 
     document.getElementById('game').innerHTML = hero.getHeroElement();
     setTimeout(start, 500)

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+
+
+    let SwitchButton = function () {
+        this.connectToLamp = function (electric) {
+            if (this.status && this.electric.status){
+                alert("Đã bật đèn")
+            }else{
+                alert("Tắt đèn")
+            }
+        }
+        this.switchOff = function () {
+            this.status = false
+        }
+        
+        this.switchOn = function () {
+            this.status = true
+        }
+    }
+
+    let electric = new ElectricLamp()
+    let swithButton = new SwitchButton()
+    electric.turnOn()
+    swithButton.switchOn()
+    swithButton.connectToLamp(electric)
+</script>
+</body>
+</html>
