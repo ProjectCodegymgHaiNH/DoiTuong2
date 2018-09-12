@@ -6,77 +6,54 @@
 </head>
 <body>
 <script>
-    let Apples = function(weight){
+    let Apple = function(weight){
         this.weight = weight
-        this.getWeight = function () {
+        this.getWeightApple = function () {
             return this.weight
         }
         this.decrease = function () {
             if (this.weight > 0){
-                this.weight --
-                return this.weight
+                this.weight--
             }
-        }
-        this.isEmpty = function () {
-             this.empty = false
         }
     }
 
     let Human = function () {
-        this.setName = function (name) {
-            this.name = name
+        this.setApple = function (apple) {
+            this.apple = apple
         }
-        this.getName = function () {
-            return this.name
+        this.getApple = function () {
+            return this.apple.getWeightApple()
         }
 
-        this.isMale = function (boolean) {
-            this.gender = boolean
-        }
-        this.getGender = function () {
-            if (this.gender==true){
-                return "Nam"
+        this.checkApple = function () {
+            if (this.getApple() <= 0){
+                return false
             }
-            return "Nữ"
+            return true
         }
 
-        this.setWeight = function (weight) {
-            this.weight = weight
-        }
-        this.getWeight = function () {
-            return this.weight
-        }
-
-        this.eat= function (apple) {
-            this.apple.decrease()
-        }
-
-        this.stay = function (string) {
-            this.string = string
-        }
-        this.getStay = function () {
-            return this.string
-        }
-
-        this.checkApple = function (apple) {
-            if (this.weight <= 0){
-                this.apple.isEmpty()
+        this.eat = function () {
+            if(this.checkApple() == false){
+                console.log( " đã cắn hết táo")
+            }else{
+                this.apple.decrease()
+                console.log( " đã cắn 1 miếng táo còn " + this.getApple() + " miếng")
             }
         }
+
+
     }
 
-    let apple = new Apples(10)
-    let Nguoi = new Human()
-    Nguoi.setName("Adam")
-    Nguoi.setWeight(90)
-    Nguoi.isMale(true)
-    document.write("Tên cậu ấy là <b>"+Nguoi.getName()+"</b><br>")
-    document.write("<b>"+Nguoi.getName()+"</b> nặng <b>"+ Nguoi.getWeight()+"</b> kg<br>")
-    document.write("<b>"+Nguoi.getName()+"</b> giới tính <b>"+ Nguoi.getGender()+"</b><br>")
-    Nguoi.stay("Hello tên tôi la Adam")
-    console.log(Nguoi.getStay())
-    let anTao = apple.getWeight()
-    Nguoi.eat(anTao)
+    let apple = new Apple(10)
+    let human = new Human()
+    human.setApple(apple)
+    human.eat()
+    human.eat()
+    human.eat()
+    human.eat()
+    human.eat()
+    human.eat()
 </script>
 </body>
 </html>
