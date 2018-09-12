@@ -42,18 +42,49 @@
             }
         }
 
+        this.setName = function (name) {
+            this.name = name
+        }
+        this.setGender = function (boolean) {
+            this.gender = boolean
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight
+        }
 
+        this.getName = function () {
+            return this.name
+            console.log("Tên là "+this.name)
+        }
+        this.getWeight = function () {
+            return this.weight
+            console.log("Cân nặng "+this.name+" kg")
+        }
+        this.isMale = function () {
+            if(this.gender == false){
+                return "Nữ"
+                console.log("Giới tính nữ")
+            }
+            return "Nam"
+            console.log("Giới tính nam")
+        }
+
+        this.stay = function (string) {
+            this.string = string
+            console.log(string)
+        }
     }
 
-    let apple = new Apple(10)
+    let apple = new Apple(5)
     let human = new Human()
+    human.setName("Adam")
+    human.setWeight("90kg")
+    human.setGender(true)
+    document.write("Tên: "+human.name+" - Giới tính: "+human.gender+" - Cân nặng: "+human.weight+"<br>")
     human.setApple(apple)
+    
     human.eat()
-    human.eat()
-    human.eat()
-    human.eat()
-    human.eat()
-    human.eat()
+
 </script>
 </body>
 </html>

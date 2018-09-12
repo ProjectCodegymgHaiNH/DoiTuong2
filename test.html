@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Xây dựng lớp mô phỏng sự hoạt động của đèn pin</title>
 </head>
 <body>
-$END$
+<script>
+    let Weight = function (weight) {
+        this.weight = weight
+        this.getWeight = function () {
+            return this.weight
+        }
+
+        this.giamWeight = function () {
+            if(this.weight> 0 ){
+                this.weight--
+            }
+        }
+    }
+
+    let Human = function () {
+        this.setWeight = function (pin) {
+            this.pin = pin
+        }
+        this.getThongTinWeight = function () {
+            return this.pin.getWeight()
+        }
+
+        this.anTao = function () {
+            this.pin.giamWeight()
+        }
+    }
+
+    let we = new Weight(10)
+    let Nguoi = new Human()
+    Nguoi.setWeight(we)
+    console.log("Thông tin pin: "+Nguoi.getThongTinWeight())
+    Nguoi.anTao()
+    console.log( " đã cắn 1 miếng táo còn " + human.eat() + " miếng")
+    console.log(Nguoi.getThongTinWeight())
+
+</script>
 </body>
 </html>
