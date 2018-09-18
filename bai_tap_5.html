@@ -10,6 +10,9 @@
         this.name = name
         this.weight = weight
         this.speed = speed
+        this.checkRatDie = function (check) {
+            this.ratDie = check
+        }
         this.getName = function () {
              return this.name
         }
@@ -19,15 +22,16 @@
         this.getSpeed = function () {
             return this.speed
         }
+
         this.checkStatus = function () {
             if (this.status) {
-                console.log("Còn sống")
+                console.log("Chuột "+this.name+" Còn sống")
                 return true
             }
-            console.log(this.name+" đã chết")
+            console.log("Chuột "+ this.name+" đã chết")
             return false
-
         }
+
         this.life = function () {
             this.status = true
         }
@@ -44,6 +48,15 @@
         this.name = name
         this.weight = weight
         this.speed = speed
+        this.getSpeedCat = function () {
+            return this.speed
+        }
+        this.getWeightCat = function () {
+            return this.weight
+        }
+        this.getNameCat = function () {
+            return this.name
+        }
         this.getRat = function (target) {
             this.rat = target
         }
@@ -64,7 +77,12 @@
         }
         this.catchRat = function () {
             if (this.rat.checkStatus()) {
+                if (this.rat.getSpeed() > this.speed){
+                    console.log(this.rat.getName()+" đã chạy thoát vì quá nhanh")
 
+                }else{
+                    console.log(this.name+" đã bắt được "+this.rat.getName())
+                }
             }else {
                 this.rat.getName()
             }
@@ -76,7 +94,6 @@
     meo.getRat(chuot)
     console.log(meo.getInfoRat())
     console.log(meo.getInfoCat())
-    meo.catchRat()
 </script>
 </body>
 </html>
