@@ -24,12 +24,12 @@
         }
 
         this.checkStatus = function () {
-            if (this.status) {
-                console.log("Chuột "+this.name+" Còn sống")
-                return true
+            if (this.status == false) {
+                console.log("Chuột "+ this.name+" đã chết")
+                return false
             }
-            console.log("Chuột "+ this.name+" đã chết")
-            return false
+            console.log("Chuột "+this.name+" Còn sống")
+            return true
         }
 
         this.life = function () {
@@ -79,18 +79,19 @@
             if (this.rat.checkStatus()) {
                 if (this.rat.getSpeed() > this.speed){
                     console.log(this.rat.getName()+" đã chạy thoát vì quá nhanh")
-
                 }else{
-                    console.log(this.name+" đã bắt được "+this.rat.getName())
+                    this.weight += this.rat.getWeight()
+                    console.log(this.name+" đã ăn được "+this.rat.getName()+" và tăng thêm "+this.rat.getWeight()+" kg = "+this.weight+" kg")
                 }
             }else {
                 this.rat.getName()
+                console.log(this.name+" không thèm ăn")
             }
         }
     }
 
-    let chuot = new Rat("jelly", 2, 30)
-    let meo = new Cat("tom", 12, 35)
+    let chuot = new Rat("Jelly", 2, 30)
+    let meo = new Cat("Tom", 12, 35)
     meo.getRat(chuot)
     console.log(meo.getInfoRat())
     console.log(meo.getInfoCat())
