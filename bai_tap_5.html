@@ -5,6 +5,78 @@
     <title>Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột</title>
 </head>
 <body>
+<script>
+    let Rat = function (name, weight, speed) {
+        this.name = name
+        this.weight = weight
+        this.speed = speed
+        this.getName = function () {
+             return this.name
+        }
+        this.getWeight = function () {
+             return this.weight
+        }
+        this.getSpeed = function () {
+            return this.speed
+        }
+        this.checkStatus = function () {
+            if (this.status) {
+                console.log("Còn sống")
+                return true
+            }
+            console.log(this.name+" đã chết")
+            return false
 
+        }
+        this.life = function () {
+            this.status = true
+        }
+        this.die = function () {
+            this.status = false
+        }
+        this.stay = function () {
+            console.log("Chít chít")
+        }
+    } 
+    
+    
+    let Cat = function (name, weight, speed) {
+        this.name = name
+        this.weight = weight
+        this.speed = speed
+        this.getRat = function (target) {
+            this.rat = target
+        }
+        //info chuột
+        this.getInfoRat = function () {
+            this.info = "Name: "+this.rat.getName()+" - Weight: "+this.rat.getWeight()+" kg - Speed:"+this.rat.getSpeed()+" km/h"
+            return this.info
+        }
+
+        //info mèo
+        this.getInfoCat = function () {
+            this.infoCat = "Name: "+this.name+" - Weight: "+this.weight+" kg - Speed:"+this.speed+" km/h"
+            return this.infoCat
+        }
+
+        this.stayCat = function () {
+            console.log("Meo Meo")
+        }
+        this.catchRat = function () {
+            if (this.rat.checkStatus()) {
+
+            }else {
+                this.rat.getName()
+            }
+        }
+    }
+
+    let chuot = new Rat("jelly", 2, 30)
+    let meo = new Cat("tom", 12, 35)
+    meo.getRat(chuot)
+    console.log(meo.getInfoRat())
+    console.log(meo.getInfoCat())
+    meo.catchRat()
+</script>
 </body>
 </html>

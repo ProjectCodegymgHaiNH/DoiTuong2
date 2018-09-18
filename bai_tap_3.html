@@ -21,15 +21,20 @@
 
     let SwitchButton = function () {
         this.connectToLamp = function (electric) {
-            this.electric = electric
+            this.electric =electric
+
             if (this.status == true && this.electric == true){
                 document.write("Đã bật điện và đèn sáng<br>")
+                console.log("Chưa bật công tắc đèn<br>")
             }else if(this.status == false && this.electric == true){
                 document.write("Chưa cắm ổ điện<br>")
+                console.log("Chưa bật công tắc đèn<br>")
             }else if(this.status == true && this.electric == false){
                 document.write("Chưa bật công tắc đèn<br>")
+                console.log("Chưa bật công tắc đèn<br>")
             }else{
                 document.write("Chưa bật công tắc đèn và cắm điện<br>")
+                console.log("Chưa bật công tắc đèn và cắm điện<br>")
             }
         }
         this.switchOff = function () {
