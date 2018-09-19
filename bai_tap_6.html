@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển chương trình sử dụng Remote để điều khiển TiVi</title>
+</head>
+<body>
+<script>
+    let Tivi = function(){
+        this.setOnOffTivi = function (check) {
+            this.status = check
+        }
+        this.setChannel = function (channel) {
+            if (channel == undefined) {
+                this.channel = "vtv3"
+            }else{
+                this.channel = channel
+            }
+        }
+        this.setVolume = function () {
+            this.volume = 20
+        }
+        this.getChannel = function () {
+            return this.channel
+        }
+        this.getVolume = function () {
+            return this.volume
+        }
+        this.checkTivi = function () {
+            if (this.status){
+                console.log("Tivi đã được bật")
+                console.log("Kênh hiện tại là "+this.channel)
+                console.log("Âm lượng là "+this.volume)
+            }else{
+                console.log("Tivi đã được tắt")
+            }
+        }
+
+        this.setUpVolume = function (up_down) {
+            if(this.volume<=95){
+                this.volume += 5
+            }else if(this.volume>95){
+                this.volume = 100
+            }
+        }
+        this.setDownVolume = function () {
+            if (this.volume<5){
+                this.volume = 0
+            }else{
+                this.volume -= 5
+            }
+        }
+    }
+
+    let Remote = function () {
+        this.setTivi = function (tivi) {
+            this.tivi = tivi
+        }
+        //Chức năng bật tivi
+        this.turnOnOff = function (boolean) {
+            this.on_off = boolean
+            this.tivi.setOnOffTivi(this.on_off)
+            if (boolean){
+                console.log("Tivi đã được bật")
+            }else{
+                console.log("Tivi đã tắt")
+            }
+        }
+        //chức năng chuyển kênh
+        this.changeChannel = function (changeChannel) {
+            this.channelS = changeChannel
+            this.tivi.setChannel(this.channelS)
+            console.log("Đã chuyển sang kênh "+this.channelS)
+        }
+        //Tăng âm lượng
+        this.volumeUp = function () {
+            this.tivi.setUpVolume()
+            this.tivi.getVolume()
+            console.log("Đã tăng âm lượng tivi")
+        }
+        //Giảm âm lượng
+        this.volumeDown = function () {
+            this.tivi.setDownVolume()
+            this.tivi.getVolume()
+            console.log("Đã giảm âm lượng tivi")
+        }
+        //Check tivi
+        this.checkTV = function () {
+            this.tivi.checkTivi()
+        }
+    }
+
+    let sony = new Tivi()
+    let remote = new Remote()
+    remote.setTivi(sony)
+</script>
+</body>
+</html>
