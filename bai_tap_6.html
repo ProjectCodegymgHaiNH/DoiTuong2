@@ -6,19 +6,14 @@
 </head>
 <body>
 <script>
-    let Tivi = function(){
+    let Tivi = function(channel, volume){
+        this.channel = channel
+        this.volume = volume
         this.setOnOffTivi = function (check) {
             this.status = check
         }
         this.setChannel = function (channel) {
-            if (channel == undefined) {
-                this.channel = "vtv3"
-            }else{
-                this.channel = channel
-            }
-        }
-        this.setVolume = function () {
-            this.volume = 20
+            this.channel = channel
         }
         this.getChannel = function () {
             return this.channel
@@ -36,17 +31,13 @@
             }
         }
 
-        this.setUpVolume = function (up_down) {
-            if(this.volume<=95){
+        this.setUpVolume = function () {
+            if(this.volume<100){
                 this.volume += 5
-            }else if(this.volume>95){
-                this.volume = 100
             }
         }
         this.setDownVolume = function () {
-            if (this.volume<5){
-                this.volume = 0
-            }else{
+            if (this.volume>=0){
                 this.volume -= 5
             }
         }
@@ -61,9 +52,9 @@
             this.on_off = boolean
             this.tivi.setOnOffTivi(this.on_off)
             if (boolean){
-                console.log("Tivi đã được bật")
+                console.log("Bật tivi")
             }else{
-                console.log("Tivi đã tắt")
+                console.log("Tắt tivi")
             }
         }
         //chức năng chuyển kênh
@@ -80,6 +71,7 @@
         //Giảm âm lượng
         this.changeVolumeDown = function () {
             this.tivi.setDownVolume()
+            console.log(this.tivi.getVolume())
             console.log("Đã giảm âm lượng tivi lên 5 đơn vi")
         }
         //Check tivi
@@ -88,7 +80,7 @@
         }
     }
 
-    let sony = new Tivi()
+    let sony = new Tivi("vtv3", 20)
     let remote = new Remote()
     remote.setTivi(sony)
 </script>
