@@ -90,11 +90,20 @@
         }
     }
 
-    let chuot = new Rat("Jelly", 2, 30)
+    let chuot1 = new Rat("Jelly", 2, 30)
+    let chuot2 = new Rat("Latta", 4, 40)
     let meo = new Cat("Tom", 12, 35)
-    meo.getRat(chuot)
-    console.log(meo.getInfoRat())
     console.log(meo.getInfoCat())
+    meo.getRat(chuot1)
+    chuot1.die()
+    console.log(meo.getInfoRat())
+    meo.catchRat()
+    chuot1.life()
+    meo.catchRat()
+    chuot2.life()
+    meo.getRat(chuot2)
+    console.log(meo.getInfoRat())
+    meo.catchRat()
 </script>
 </body>
 </html>
