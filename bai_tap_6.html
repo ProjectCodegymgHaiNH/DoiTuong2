@@ -73,16 +73,14 @@
             console.log("Đã chuyển sang kênh "+this.channelS)
         }
         //Tăng âm lượng
-        this.volumeUp = function () {
+        this.changeVolumeUp = function () {
             this.tivi.setUpVolume()
-            this.tivi.getVolume()
-            console.log("Đã tăng âm lượng tivi")
+            console.log("Đã tăng âm lượng tivi xuống 5 đơn vị")
         }
         //Giảm âm lượng
-        this.volumeDown = function () {
+        this.changeVolumeDown = function () {
             this.tivi.setDownVolume()
-            this.tivi.getVolume()
-            console.log("Đã giảm âm lượng tivi")
+            console.log("Đã giảm âm lượng tivi lên 5 đơn vi")
         }
         //Check tivi
         this.checkTV = function () {
