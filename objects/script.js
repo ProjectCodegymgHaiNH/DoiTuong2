@@ -66,7 +66,7 @@ function start() {
             hero.stopT = true
         }
     //
-        if (hero.top>=0 && hero.stopB == false && hero.stopL == false && hero.stopT) {
+        if (hero.top>0 && hero.stopB == false && hero.stopL == false && hero.stopT) {
             hero.moveBottom(-50);
         } else {
             hero.stopT = false
